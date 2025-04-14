@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vincent's Projekt</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">Vincent</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Om mig</a></li>
+          <li><a href="projects.html">Projekt</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="projects-content">
+      <section class="intro">
+        <h2>Mina Projekt</h2>
+        <p>
+          Här är ett urval av projekt jag jobbat med — allt från webbutveckling
+          till design och egna startups.
+        </p>
+      </section>
+
+      <section class="projects-grid">
+        <article class="project-card">
+          <h3>Ægean Clothing</h3>
+          <p>
+            Mitt egna streetwear brand där jag ansvarar för design,
+            marknadsföring och e-handel via Shopify.
+          </p>
+          <a href="https://aegeanclothes.store/password" target="_blank"
+            >Besök projektet</a
+          >
+        </article>
+
+        <article class="project-card">
+          <h3>PlantSwap App</h3>
+          <p>
+            En fullstack-applikation byggd i Spring Boot & MongoDB för att byta
+            växter med andra entusiaster.
+          </p>
+          <a href="https://github.com/Vinneys/PlantSwap/tree/master">Läs mer</a>
+        </article>
+        <article class="project-card" id="portfolioCard">
+          <h3>Portfolio Website</h3>
+          <p>
+            Den här sidan! Byggd med HTML, CSS och kärlek. Syftet är att visa
+            upp mina färdigheter och passioner.
+          </p>
+          <a href="#" id="showCode">Visa kod</a>
+
+          <!-- Modal inside this card -->
+          <div class="code-modal" id="codeModal">
+            <div class="code-modal-content">
+              <div class="slider">
+                <img id="sliderImage" src="images/code1.jpg" alt="Kodexempel" />
+                <div class="slider-controls">
+                  <button id="prevBtn">←</button>
+                  <button id="nextBtn">→</button>
+                </div>
+              </div>
+              <button id="closeCode">Stäng</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Vincent. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const showCode = document.getElementById("showCode");
+      const closeCode = document.getElementById("closeCode");
+      const codeModal = document.getElementById("codeModal");
+
+      const sliderImage = document.getElementById("sliderImage");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      // List of image paths
+      const images = ["images/kod1.png", "images/kod2.png", "images/kod3.png"];
+      let currentIndex = 0;
+
+      function showImage(index) {
+        sliderImage.src = images[index];
+      }
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+
+      showCode.addEventListener("click", (e) => {
+        e.preventDefault();
+        codeModal.style.display = "flex";
+        showImage(currentIndex);
+      });
+
+      closeCode.addEventListener("click", () => {
+        codeModal.style.display = "none";
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === codeModal) {
+          codeModal.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
