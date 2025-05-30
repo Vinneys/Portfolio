@@ -6,7 +6,7 @@ A responsive and dynamic portfolio site built with HTML, CSS and JavaScript — 
 
 ## 🌍 Live Demo
 
-🔗 [View Portfolio](https://vinneys.github.io/portfolio)
+🔗 [View Portfolio](https://vinneys.github.io/Portfolio/index.html)
 
 ---
 
