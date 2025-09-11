@@ -937,17 +937,29 @@ nav ul li a:hover {
     top: 0;
     right: -100%;
     width: 100%;
-    height: 100vh;
+    height: 200vh;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(20, 20, 40, 0.98));
     backdrop-filter: blur(15px);
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding-top: 100px;
+    padding-top: 20px;
     z-index: 999;
   }
 
   .nav-menu.active {
     right: 0;
     animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hide main content when mobile menu is active */
+  .nav-menu.active ~ * {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Keep footer visible */
+  .nav-menu.active ~ .footer {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   @keyframes slideInRight {
