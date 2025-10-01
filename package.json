@@ -1,0 +1,30 @@
+{
+  "name": "vincent-portfolio",
+  "version": "1.0.0",
+  "description": "Vincent's Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html --watch=.",
+    "start": "live-server --port=3000 --open=/index.html",
+    "build": "echo 'Static site - no build process needed'",
+    "serve": "live-server --port=8080 --open=/index.html"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Vincent",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vinneys/portfolio"
+  },
+  "homepage": "https://vinneys.github.io/portfolio"
+}
+
